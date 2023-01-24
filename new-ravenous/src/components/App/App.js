@@ -18,14 +18,20 @@ let business = {
 let businesses = [];
 for (let i=0;i<6;i++) businesses.push(business);
 
-function App() {
-  return (
-      <div className="App">
-        <h1>ravenous</h1>
-        <SearchBar/>
-        <BusinessList list={businesses}/>
-      </div>
-  );
+class App extends React.Component {
+
+    searchYelp = (dataObject) => {
+        console.log(`Looking for ${dataObject.term} in ${dataObject.location} by ${dataObject.sortBy}`);
+    }
+
+    render() {
+        return (
+            <div className="App">
+                <h1>ravenous</h1>
+                <SearchBar searchYelp={this.searchYelp}/>
+                <BusinessList list={businesses}/>
+            </div>
+  );}
 }
 
 export default App;
