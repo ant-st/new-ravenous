@@ -42,6 +42,7 @@ class SearchBar extends React.Component {
 
     handleSearch = (e) => {
         this.props.searchYelp(this.state.term, this.state.location, this.state.sortBy);
+        this.props.toggleHomepage();
         e.preventDefault()
     }
 

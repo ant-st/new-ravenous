@@ -22,8 +22,9 @@ for (let i=0;i<6;i++) businesses.push(business);*/
 class App extends React.Component {
     constructor(props) {
         super(props);
-        this.state={businesses: []};
+        this.state={businesses: [], homepage: true};
         this.searchYelp=this.searchYelp.bind(this);
+        this.toggleHomepage=this.toggleHomepage.bind(this);
     }
     searchYelp = (term, location, sortBy) => {
         console.log("searching...");
@@ -34,12 +35,16 @@ class App extends React.Component {
         });
     }
 
+    toggleHomepage = () => {
+        this.setState({homepage: false});
+    }
+
     render() {
         return (
             <div className="App">
                 <h1>ravenous</h1>
-                <SearchBar searchYelp={this.searchYelp}/>
-                <BusinessList list={this.state.businesses}/>
+                <SearchBar searchYelp={this.searchYelp} toggleHomepage={this.toggleHomepage}/>
+                <BusinessList list={this.state.businesses} homepage={this.state.homepage}/>
             </div>
   );}
 }
