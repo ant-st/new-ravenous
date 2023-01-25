@@ -28,7 +28,8 @@ const Yelp = {
                         zipCode: business.location['zip_code'],
                         category: business.categories.alias,
                         rating: business.rating,
-                        reviewCount: business['review_count']
+                        reviewCount: business['review_count'],
+                        url: business.url
                     }
                 })
             }

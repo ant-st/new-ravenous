@@ -7,7 +7,7 @@ class Business extends React.Component {
         return (
         <div className="Business">
             <div className="image-container">
-                <img src={this.props.instance.imageSrc} alt=''/>
+                <a href={this.props.instance.url} target="_blank"><img src={this.props.instance.imageSrc} alt=''/></a>
             </div>
             <h2>{this.props.instance.name}</h2>
             <div className="Business-information">
