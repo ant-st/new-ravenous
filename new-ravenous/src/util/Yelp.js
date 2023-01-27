@@ -29,11 +29,12 @@ const Yelp = {
                         category: business.categories.alias,
                         rating: business.rating,
                         reviewCount: business['review_count'],
-                        url: business.url
+                        url: business.url,
+                        coords: business.coordinates,
                     }
                 })
             }
-        }).catch(e => {console.log(e)});
+        }).catch(e => {console.log("chuj ci e w dupe" + e)});
     }
 };
 
